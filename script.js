@@ -6,21 +6,30 @@ function toggleMenu() {
     icons.classList.toggle('active');
 }
 
-function changeBackground(color) {
-    const bgColor = document.querySelector('header');
-    const textColor = document.querySelector('header h1'); // Assuming text is inside an h1 tag within the header
+function applyColorFilter(color) {
+    const mainImage = document.getElementById("mainImage");
 
-    // Set the background color
-    bgColor.style.backgroundColor = color;
-
-    // Change text color to black if background is white, otherwise set to white
-    if (color === 'white') {
-        textColor.style.color = 'black';
+    if (color === 'black') {
+        mainImage.style.filter = 'brightness(0.4) contrast(1) saturate(0%)';
+    } else if (color === 'white') {
+        mainImage.style.filter = 'invert(1)';
+    } else if (color === 'gray') {
+        mainImage.style.filter = 'grayscale(100%)';
+    } else {
+        mainImage.style.filter = 'none';
     }
 }
 
+const bikeWeights = {
+    small: "12 kg",
+    medium: "14.18KG",
+    large: "18 kg"
+};
+
 function changeSize(size) {
     const mainImage = document.getElementById("mainImage");
+    const weightElement = document.getElementById("weight");
+
     if (size === 'small') {
         mainImage.style.transform = 'scale(0.9)';
     } else if (size === 'medium') {
@@ -28,6 +37,8 @@ function changeSize(size) {
     } else if (size === 'large') {
         mainImage.style.transform = 'scale(1.1)';
     }
+
+    weightElement.innerText = `Weight: ${bikeWeights[size]}`;
 }
 
 const bikePrices = {
@@ -95,7 +106,6 @@ document.addEventListener("click", (e) => {
         cartContent.style.display = "none";
     }
 });
-
 
 let currentIndex = 0;
 const imagesToShow = 3;

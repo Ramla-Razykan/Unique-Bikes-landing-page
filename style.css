@@ -77,11 +77,12 @@ header {
 #cartContent {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: 20px;
-    width: 200px;
+    width: 300px;
+    color: #000;
     background: white;
-    border: 1px solid #ddd;
+    border: 5px solid #ddd;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -91,12 +92,13 @@ header {
     margin: 5px 0;
 }
 
-.cart-container {
+.cart-content {
     display: none;
     position: fixed;
     top: 20%;
     right: 5%;
     background: #fff;
+    color: #000;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 250px;
@@ -104,17 +106,9 @@ header {
     border-radius: 8px;
 }
 
-.cart-container h3 {
+.cart-content h3 {
     margin-top: 0;
-}
-
-.cart-container button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    color: #000;
 }
 
 .product-display {
